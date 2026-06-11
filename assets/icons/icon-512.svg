@@ -1,0 +1,53 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGrad512" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8C00;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow512">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="512" height="512" fill="#000000"/>
+  
+  <!-- Outer border -->
+  <rect x="30" y="30" width="452" height="452" fill="none" stroke="url(#goldGrad512)" stroke-width="5"/>
+  
+  <!-- Chess board pattern -->
+  <g id="chessboard" stroke-width="1">
+    <rect x="50" y="50" width="412" height="412" fill="#8B4513"/>
+    <!-- 8x8 board squares -->
+    <g id="squares">
+      <rect x="50" y="50" width="51.5" height="51.5" fill="#f0d9b5"/>
+      <rect x="101.5" y="50" width="51.5" height="51.5" fill="#b58863"/>
+      <rect x="153" y="50" width="51.5" height="51.5" fill="#f0d9b5"/>
+      <rect x="204.5" y="50" width="51.5" height="51.5" fill="#b58863"/>
+      <rect x="256" y="50" width="51.5" height="51.5" fill="#f0d9b5"/>
+      <rect x="307.5" y="50" width="51.5" height="51.5" fill="#b58863"/>
+      <rect x="359" y="50" width="51.5" height="51.5" fill="#f0d9b5"/>
+      <rect x="410.5" y="50" width="51.5" height="51.5" fill="#b58863"/>
+      <!-- Repeating pattern for 8 rows -->
+    </g>
+  </g>
+  
+  <!-- Knight piece - large -->
+  <g filter="url(#glow512)">
+    <text x="256" y="320" font-size="200" text-anchor="middle" fill="url(#goldGrad512)" font-weight="bold" font-family="Arial">♘</text>
+  </g>
+  
+  <!-- Title -->
+  <text x="256" y="460" font-size="48" text-anchor="middle" fill="url(#goldGrad512)" font-weight="bold" font-family="Arial">SWEET CHESS</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="80" cy="80" r="5" fill="url(#goldGrad512)" opacity="0.7"/>
+  <circle cx="432" cy="80" r="5" fill="url(#goldGrad512)" opacity="0.7"/>
+  <circle cx="80" cy="432" r="5" fill="url(#goldGrad512)" opacity="0.7"/>
+  <circle cx="432" cy="432" r="5" fill="url(#goldGrad512)" opacity="0.7"/>
+</svg>
