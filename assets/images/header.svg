@@ -1,0 +1,81 @@
+<svg width="1200" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF8C00;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="300" fill="url(#bgGradient)"/>
+  
+  <!-- Decorative patterns -->
+  <circle cx="100" cy="50" r="30" fill="url(#goldGradient)" opacity="0.1"/>
+  <circle cx="1100" cy="250" r="40" fill="url(#goldGradient)" opacity="0.1"/>
+  
+  <!-- Chess board pattern in background -->
+  <g opacity="0.05">
+    <rect x="50" y="50" width="40" height="40" fill="#d4af37"/>
+    <rect x="90" y="50" width="40" height="40" fill="#000"/>
+    <rect x="130" y="50" width="40" height="40" fill="#d4af37"/>
+    <rect x="170" y="50" width="40" height="40" fill="#000"/>
+    <rect x="50" y="90" width="40" height="40" fill="#000"/>
+    <rect x="90" y="90" width="40" height="40" fill="#d4af37"/>
+    <rect x="130" y="90" width="40" height="40" fill="#000"/>
+    <rect x="170" y="90" width="40" height="40" fill="#d4af37"/>
+  </g>
+  
+  <!-- Knight head (stylized) with glow -->
+  <g filter="url(#glow)">
+    <!-- Neck -->
+    <path d="M 550 180 Q 540 150 535 120" stroke="url(#goldGradient)" stroke-width="25" fill="none" stroke-linecap="round"/>
+    
+    <!-- Head outline -->
+    <ellipse cx="530" cy="80" rx="45" ry="55" fill="url(#goldGradient)" stroke="#FFD700" stroke-width="2"/>
+    
+    <!-- Snout -->
+    <path d="M 510 70 Q 480 60 460 75" stroke="url(#goldGradient)" stroke-width="20" fill="none" stroke-linecap="round"/>
+    
+    <!-- Ear -->
+    <path d="M 560 40 Q 575 20 570 50" stroke="url(#goldGradient)" stroke-width="18" fill="none" stroke-linecap="round"/>
+    
+    <!-- Eye -->
+    <circle cx="545" cy="70" r="8" fill="#ffffff"/>
+    <circle cx="547" cy="68" r="4" fill="#000000"/>
+    
+    <!-- Details -->
+    <path d="M 530 100 Q 525 110 535 115" stroke="url(#goldGradient)" stroke-width="3" fill="none"/>
+  </g>
+  
+  <!-- Title text -->
+  <text x="750" y="100" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="url(#goldGradient)" text-anchor="middle" filter="url(#glow)">
+    SWEET CHESS
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="750" y="160" font-family="Arial, sans-serif" font-size="48" fill="#d4af37" text-anchor="middle" opacity="0.9">
+    شطرنج آنلاین
+  </text>
+  
+  <!-- Decorative lines -->
+  <line x1="400" y1="200" x2="600" y2="200" stroke="url(#goldGradient)" stroke-width="3" opacity="0.5"/>
+  <line x1="900" y1="200" x2="1100" y2="200" stroke="url(#goldGradient)" stroke-width="3" opacity="0.5"/>
+  
+  <!-- Small decorative squares -->
+  <g opacity="0.3">
+    <rect x="200" y="240" width="20" height="20" fill="url(#goldGradient)"/>
+    <rect x="1000" y="50" width="20" height="20" fill="url(#goldGradient)"/>
+  </g>
+</svg>
