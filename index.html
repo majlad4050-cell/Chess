@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sweet Chess - شطرنج آنلاین</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#d4af37">
+</head>
+<body>
+
+  <button id="music-btn" class="music-circle">🎵</button>
+
+  <div class="page page-home">
+    <img src="assets/images/header.png" class="header-img" alt="Sweet Chess">
+
+    <div class="main-title">SWEET CHESS</div>
+    <div class="sub-title">قلعه و شطرنج آنلاین</div>
+
+    <div class="menu-buttons">
+      <button class="btn" id="btn-ai">بازی با هوش مصنوعی 🤖</button>
+      <button class="btn" id="btn-friend">بازی با دوست 👥</button>
+      <button class="btn" disabled>بازی آنلاین 🌐 (به‌زودی)</button>
+    </div>
+  </div>
+
+  <div class="page page-game" style="display:none;">
+    <div class="game-header">
+      <button class="back-btn" id="back-btn">⬅ بازگشت</button>
+      <button id="restart-btn" class="restart-btn">بازی مجدد 🔄</button>
+    </div>
+
+    <div id="board" class="board classic"></div>
+
+    <div class="status-bar">
+      <span id="status-text">نوبت: سفید</span>
+    </div>
+
+    <div class="ai-levels" id="ai-levels">
+      <button class="ai-btn" data-level="easy">آسان</button>
+      <button class="ai-btn" data-level="medium">متوسط</button>
+      <button class="ai-btn" data-level="hard">سخت</button>
+    </div>
+  </div>
+
+  <div id="color-modal" class="color-modal" style="display:none;">
+    <div class="color-box">
+      <div class="color-title">انتخاب رنگ برای بازی با هوش مصنوعی</div>
+      <button class="modal-btn" data-color="white">سفید</button>
+      <button class="modal-btn" data-color="black">سیاه</button>
+      <button id="modal-cancel">انصراف</button>
+    </div>
+  </div>
+
+  <div class="page page-settings" style="display:none;">
+    <h2 class="settings-title">⚙️ تنظیمات</h2>
+
+    <div class="setting-item">
+      <span>موسیقی پس‌زمینه</span>
+      <button id="toggle-music" class="toggle-btn">خاموش</button>
+    </div>
+
+    <div class="setting-item">
+      <span>رنگ صفحه شطرنج</span>
+      <select id="board-theme">
+        <option value="classic">کلاسیک</option>
+        <option value="blue">آبی</option>
+        <option value="green">سبز</option>
+        <option value="red">قرمز</option>
+        <option value="gray">خاکستری</option>
+        <option value="purple">بنفش</option>
+        <option value="gold">طلایی</option>
+        <option value="darkblue">آبی تیره</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="page page-shop" style="display:none;">
+    <h2>🛒 فروشگاه</h2>
+    <p>محتوای به‌زودی...</p>
+  </div>
+
+  <div class="page page-friends" style="display:none;">
+    <h2>👥 دوستان</h2>
+    <p>محتوای به‌زودی...</p>
+  </div>
+
+  <div class="page page-profile" style="display:none;">
+    <h2>👤 پروفایل</h2>
+    <p>محتوای به‌زودی...</p>
+  </div>
+
+  <div class="bottom-menu">
+    <div class="item" id="nav-home">🏠<span>خانه</span></div>
+    <div class="item" id="nav-shop">🛒<span>فروشگاه</span></div>
+    <div class="item" id="nav-friends">👥<span>دوستان</span></div>
+    <div class="item" id="nav-profile">👤<span>پروفایل</span></div>
+    <div class="item" id="nav-settings">⚙️<span>تنظیمات</span></div>
+  </div>
+
+  <audio id="bgm"></audio>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js').catch(err => {
+        console.log("Service Worker registration failed:", err);
+      });
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
